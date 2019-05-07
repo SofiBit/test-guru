@@ -38,3 +38,10 @@ users = User.create!([
   {first_name: 'Sonya', last_name: 'Bitno', email: 'x@gmail.com'},
   {first_name: 'Grigory', last_name: 'Bitno', email: 'y@gmail.com'}
   ])
+
+passed_tests = PassedTest.create!([
+  {test_id: tests[0].id, user_id: users.first.id},
+  {test_id: tests[1].id, user_id: users.first.id},
+  {test_id: tests[2].id, user_id: users.last.id},
+  {test_id: tests[3].id, user_id: users.last.id}
+  ])
