@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 categories = Category.create!([
-  {title: 'С++'},
+  {title: 'C++'},
   {title: 'HTML/CSS'}
   ])
 
