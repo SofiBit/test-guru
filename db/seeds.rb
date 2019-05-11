@@ -12,26 +12,26 @@ categories = Category.create!([
   ])
 
  tests = Test.create!([
-  {title: "Структуры", level: 2, category_id: categories[0].id },
-  {title: 'Циклы', level: 1, category_id: categories[0].id},
-  {title: 'Теги HTML', level: 1, category_id: categories[1].id},
-  {title: 'Позиционирование', level: 1, category_id: categories[1].id}
+  {title: "Структуры", level: 2, category: categories[0]},
+  {title: 'Циклы', level: 1, category: categories[0]},
+  {title: 'Теги HTML', level: 1, category: categories[1]},
+  {title: 'Позиционирование', level: 1, category: categories[1]}
   ])
 
 questions = Question.create!([
-  {body: 'Укажите типы доступа возможные для элементов структур:', test_id: tests[0].id},
-  {body: 'Обязательный атрибут тега <img>:', test_id: tests[2].id}
+  {body: 'Укажите типы доступа возможные для элементов структур:', test: tests[0]},
+  {body: 'Обязательный атрибут тега <img>:', test: tests[2]}
   ])
 
 answers = Answer.create!([
-  {body: 'Любые', question_id: questions[0].id},
-  {body: 'Только закрытые', question_id: questions[0].id},
-  {body: 'Только открытые', correct: true, question_id: questions[0].id},
-  {body: 'Только защищены', question_id: questions[0].id},
+  {body: 'Любые', question: questions[0]},
+  {body: 'Только закрытые', question: questions[0]},
+  {body: 'Только открытые', correct: true, question: questions[0]},
+  {body: 'Только защищены', question: questions[0]},
 
-  {body: 'src', correct: true, question_id: questions[1].id},
-  {body: 'alt', question_id: questions[1].id},
-  {body: 'title', question_id: questions[1].id}
+  {body: 'src', correct: true, question: questions[1]},
+  {body: 'alt', question: questions[1]},
+  {body: 'title', question: questions[1]}
   ])
 
 users = User.create!([
@@ -40,8 +40,8 @@ users = User.create!([
   ])
 
 passed_tests = PassedTest.create!([
-  {test_id: tests[0].id, user_id: users.first.id},
-  {test_id: tests[1].id, user_id: users.first.id},
-  {test_id: tests[2].id, user_id: users.last.id},
-  {test_id: tests[3].id, user_id: users.last.id}
+  {test: tests[0], user: users.first},
+  {test: tests[1], user: users.first},
+  {test: tests[2], user: users.last},
+  {test: tests[3], user: users.last}
   ])
