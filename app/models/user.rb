@@ -4,7 +4,6 @@ class User < ApplicationRecord
   has_many :tests, through: :passed_tests, dependent: :destroy
 
   def tests_with_level(level)
-    Test.joins("JOIN passed_tests ON passed_tests.test_id = tests.id")
-       .where("tests.level = ? AND passed_tests.user_id = ?", level, id)
+    tests.where(level: level)
   end
 end
