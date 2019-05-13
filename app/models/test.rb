@@ -13,7 +13,7 @@ class Test < ApplicationRecord
 
   validates :title, presence: true
   validates :level, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
-  validates :title, :level, uniqueness: true 
+  validates :title, uniqueness: { scope: :level }
 
   def self.with_category(title)
     category_title(title).sort_title.pluck(:title)
