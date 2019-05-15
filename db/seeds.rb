@@ -11,11 +11,17 @@ categories = Category.create!([
   {title: 'HTML/CSS'}
   ])
 
+users = User.create!([
+  {first_name: 'Sonya', last_name: 'Bitno', email: 'x@gmail.com'},
+  {first_name: 'Grigory', last_name: 'Bitno', email: 'y@gmail.com'},
+  {first_name: 'Creater', last_name: 'Bitno', email: 'z@gmail.com'}
+  ])
+
  tests = Test.create!([
-  {title: "Структуры", level: 2, category: categories[0]},
-  {title: 'Циклы', level: 1, category: categories[0]},
-  {title: 'Теги HTML', level: 1, category: categories[1]},
-  {title: 'Позиционирование', level: 1, category: categories[1]}
+  {title: "Структуры", level: 2, category: categories[0], author: users[2]},
+  {title: 'Циклы', level: 1, category: categories[0], author: users[2]},
+  {title: 'Теги HTML', level: 1, category: categories[1], author: users[2]},
+  {title: 'Позиционирование', level: 1, category: categories[1], author: users[2]}
   ])
 
 questions = Question.create!([
@@ -32,11 +38,6 @@ answers = Answer.create!([
   {body: 'src', correct: true, question: questions[1]},
   {body: 'alt', question: questions[1]},
   {body: 'title', question: questions[1]}
-  ])
-
-users = User.create!([
-  {first_name: 'Sonya', last_name: 'Bitno', email: 'x@gmail.com'},
-  {first_name: 'Grigory', last_name: 'Bitno', email: 'y@gmail.com'}
   ])
 
 passed_tests = PassedTest.create!([
