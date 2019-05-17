@@ -1,0 +1,6 @@
+<h1>Тест: <%= @test.title %></h1>
+<p>Вопросы:</p>
+<ul><% @test.questions.each do |q |%>
+  <li><%=q.body%></li>
+  <%end%>
+</ul>
