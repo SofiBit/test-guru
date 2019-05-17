@@ -7,12 +7,23 @@ class QuestionsController < ApplicationController
 
   def show; end
 
+  def new; end
+
+  def create
+    question = Test.find(2).questions.create(question_params)
+    render plain: question.inspect
+  end
+
   def destroy
     @question.destroy
     render plain: 'Question deleted'
   end
 
   private
+
+  def question_params
+    params.require(:question).permit(:body)
+  end
 
   def find_question
     @question = Question.find(params[:id])
