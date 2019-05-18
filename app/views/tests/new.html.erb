@@ -1,0 +1,13 @@
+<h1> Create new test </h1>
+<form action="/tests" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <p>
+    <label for="test-title">Title test:</label>
+    <input type="text" name="test[title]" id="test-title">
+  </p><br>
+  <p>
+    <label for="test-level">Level test:</label>
+    <input type="text" name="test[level]" id="test-level">
+  </p><br>
+  <input type="submit", value="Create">
+</form>
