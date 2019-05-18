@@ -4,9 +4,7 @@ class QuestionsController < ApplicationController
 
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_question_not_found
 
-  def index
-     render inline: '<%= Question.all.pluck(:body) %>'
-  end
+  def index; end
 
   def show; end
 
