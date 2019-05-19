@@ -1,0 +1,5 @@
+<tr>
+  <td><%= @question.body%></td>
+  <td><%= link_to 'destroy', question_path(@question.id), method: :delete,
+    data: { confirm: 'Are you sure?' } %></td>
+</tr>
