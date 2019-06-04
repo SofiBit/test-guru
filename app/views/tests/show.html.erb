@@ -1,3 +1,5 @@
+<h1>Test:</h1>
+
 <p>
   <strong>Title:</strong>
   <%= @test.title %>
@@ -11,14 +13,16 @@
 <%= link_to 'Back', tests_path %>
 
 <div>
-  <p>Questions:</p>
-  <ul>
-    <% @test.questions.each do |question| %>
-      <li>
-        <%= question.body %>
-        <%= link_to 'show', question_path(question) %>
-      </li>
-    <% end %>
-  </ul>
+  <h2>Questions:</h2>
+
+    <table>
+      <tr>
+        <th>Body:</th>
+        <th>Action:</th>
+      </tr>
+
+      <%= render @questions %>
+    </table>
+
   <p><%= link_to 'New question', new_test_question_path(@test)%></p>
 </div>
