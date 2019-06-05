@@ -1,5 +1,28 @@
-<tr>
-  <td><%= @test.title%></td>
-  <td><%= link_to 'destroy', test_path(@test.id), method: :delete,
-    data: { confirm: 'Are you sure?' } %></td>
-</tr>
+<h1>Test:</h1>
+
+<p>
+  <strong>Title:</strong>
+  <%= @test.title %>
+</p>
+<p>
+  <strong>Level:</strong>
+  <%= @test.level %>
+</p>
+
+<%= link_to 'Edit', edit_test_path(@test) %> |
+<%= link_to 'Back', tests_path %>
+
+<div>
+  <h2>Questions:</h2>
+
+    <table>
+      <tr>
+        <th>Body:</th>
+        <th>Action:</th>
+      </tr>
+
+      <%= render @questions %>
+    </table>
+
+  <p><%= link_to 'New question', new_test_question_path(@test)%></p>
+</div>
