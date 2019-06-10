@@ -19,10 +19,18 @@ class TestPassage < ApplicationRecord
     test.questions.index(current_question) + 1
   end
 
+  def success_rate
+    correct_questions.to_f / test.questions.count * 100
+  end
+
+  def successful?
+    success_rate > 85
+  end
+
   private
 
   def before_validation_next_question
-    if current_question.nil? && test.present?
+    if new_record? && test.present?
       self.current_question = test.questions.first
     else
       self.current_question = next_question
@@ -30,10 +38,7 @@ class TestPassage < ApplicationRecord
   end
 
   def answer_correct?(answer_ids)
-    correct_answers_count = correct_answers.count
-
-    (correct_answers.count == correct_answers.where(id: answer_ids).count) &&
-    correct_answers_count == answer_ids.count
+    correct_answers.ids.sort == Array(answer_ids).map(&:to_i).sort
   end
 
   def correct_answers
