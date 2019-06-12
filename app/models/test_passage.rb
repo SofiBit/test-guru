@@ -16,7 +16,7 @@ class TestPassage < ApplicationRecord
   end
 
   def number_question
-    test.questions.index(current_question) + 1
+    test.questions.order(:id).where('id <= ?', current_question.id).count
   end
 
   def success_rate
