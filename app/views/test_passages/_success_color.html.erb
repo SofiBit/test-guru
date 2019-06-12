@@ -1,0 +1,7 @@
+<% if @test_passage.successful? %>
+  <h2>Succes! You've completed the test! Percents: <span class="success">
+    <%= @test_passage.success_rate %>%</span></h2>
+<% else %>
+  <h2>Defeat! You have not completed the test! Percents: <span class="fail">
+    <%= @test_passage.success_rate %>%</span></h2>
+<% end %>

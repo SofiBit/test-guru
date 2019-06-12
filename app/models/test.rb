@@ -2,8 +2,8 @@ class Test < ApplicationRecord
   belongs_to :author, class_name: 'User', foreign_key: 'user_id', optional: true
   belongs_to :category, optional: true
   has_many :questions, dependent: :destroy
-  has_many :passed_tests
-  has_many :users, through: :passed_tests, dependent: :destroy
+  has_many :test_passages
+  has_many :users, through: :test_passages, dependent: :destroy
 
   scope :easy_level, -> { where(level: 0..1) }
   scope :average_level, -> { where(level: 2..4) }

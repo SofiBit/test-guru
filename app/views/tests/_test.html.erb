@@ -8,5 +8,6 @@
                   method: :delete,
                   data: { confirm: 'Are you sure?' }%>
   </td>
+  <td><%= button_to 'Start', start_test_path(test)%></td>
   <td><%= test.questions.count %></td>
 </tr>
