@@ -1,0 +1,30 @@
+<%= form_with model: @user, local: true do |form| %>
+  <%= render 'shared/errors', resource: @user %>
+
+  <p>
+    <%= form.label :first_name %>
+    <%= form.text_field :first_name %>
+  </p>
+
+  <p>
+    <%= form.label :last_name %>
+    <%= form.text_field :last_name %>
+  </p>
+
+  <p>
+    <%= form.label :email %>
+    <%= form.text_field :email%>
+  </p>
+
+  <p>
+    <%= form.label :password %>
+    <%= form.password_field :password %>
+  </p>
+
+  <p>
+    <%= form.label :password_confirmation %>
+    <%= form.password_field :password_confirmation %>
+  </p>
+
+  <p><%= form.submit 'Enter' %></p>
+<% end %>

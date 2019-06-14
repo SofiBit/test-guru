@@ -1,7 +1,14 @@
 Rails.application.routes.draw do
-  resources :answers
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
   root 'questions#index'
+
+  get :signup, to: 'users#new'
+  get :login, to: 'sessions#new'
+  delete :exit, to: 'sessions#delete'
+
+  resources :users, only: :create
+  resources :sessions, only: :create
+
   # Ресурс вопросов, вложенный в ресурс тестов
   resources :tests do
     resources :questions, shallow: true, except: :index do
