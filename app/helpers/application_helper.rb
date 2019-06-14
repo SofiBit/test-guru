@@ -8,7 +8,7 @@ module ApplicationHelper
     link_to "Project #{repo}", "https://github.com/#{author}/#{repo}", target: :_blank
   end
 
-  def flash_message
-    content_tag :p, flash[:alert], class: 'flash alert' if flash[:alert]
+  def flash_message(type)
+    content_tag(:p, flash[type], class: "flash #{type}") if flash.now[type]
   end
 end
