@@ -1,11 +1,4 @@
 <div class="nav">
   <p><%= link_to 'Test Guru', tests_path %></p>
-  <p><%= link_to 'Registracia', signup_path %></p>
-  <p><%= link_to 'login', login_path %></p>
-  <% if logged_in? %>
-    <p><%= link_to 'Exit',
-                    exit_path,
-                    method: :delete,
-                    data: { confirm: 'Are you sure?' }%></p>
-  <% end %>
+  <p><%= link_to 'login', user_session_path %></p>
 <div>
