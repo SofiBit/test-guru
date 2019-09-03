@@ -18,6 +18,9 @@ class User < ApplicationRecord
   validates :email, format: { with: URI::MailTo::EMAIL_REGEXP,
     message: "format: @example.com" }
 
+  validates :first_name, presence: true
+  validates :last_name, presence: true
+
   def tests_with_level(level)
     tests.where(level: level)
   end

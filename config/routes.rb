@@ -6,11 +6,7 @@ Rails.application.routes.draw do
   resources :users, only: :create
   resources :sessions, only: :create
 
-  # Ресурс вопросов, вложенный в ресурс тестов
-  resources :tests do
-    resources :questions, shallow: true, except: :index do
-      resources :answers, shallow: true, except: :index
-    end
+  resources :tests, only: :index do
 
     member do
       post :start
@@ -21,6 +17,15 @@ Rails.application.routes.draw do
   resources :test_passages, only: %i[show update] do
     member do
       get :result
+    end
+  end
+
+  namespace :admin do
+    resources :tests do
+
+      resources :questions, shallow: true, except: :index do
+        resources :answers, shallow: true, except: :index
+      end
     end
   end
 end
