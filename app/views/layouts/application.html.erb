@@ -12,9 +12,11 @@
   <body>
     <%= render 'shared/nav' %>
 
-    <% if logged_in? %>
-    <p class="not">Welcome,<b><%= current_user.first_name %></b> Guru</p>
+    <% if user_signed_in? %>
+      <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
     <% end %>
+
+    <%= render 'shared/flash' %>
 
     <div class = "content">
       <%= yield %>
