@@ -1,0 +1,61 @@
+ru:
+  app:
+    edit: "Редактировать"
+    delete: "Удалить"
+    show: "Смотреть"
+    sure: "Вы уверены?"
+    back: "Назад"
+  answer:
+  question:
+  admin:
+    tests:
+      index:
+        tricky: "Хитрые тесты:"
+        title: 'Название'
+        level: 'Уровень'
+        actions: 'Действия'
+        questions: 'Вопросы'
+        create_new: 'Создать новый тест'
+      show:
+        test: 'Тест'
+        title: 'Название'
+        level: 'Уровень'
+        actions: 'Действия'
+        questions: 'Вопросы'
+        body: 'Тело'
+        new_question: 'Создать новый вопрос'
+      edit:
+        edit_test: 'Редактировать тест'
+      new:
+        create_new: 'Создать новый тест'
+    answers:
+      edit:
+        header: 'Реадктирование ответа'
+      new:
+        header: 'Создание ответа'
+      show:
+        question: 'Вопрос'
+        answer: 'Ответ'
+        correct: 'Правильный'
+    questions:
+      edit:
+        edit_question: "Редактировать вопрос теста %{test_title}"
+      new:
+        new_question: "Новый вопрос теста %{test_title}"
+  activerecord:
+    models:
+      test: "Тест"
+      category: "Категрия"
+      answer: "Ответ"
+      question: "Вопрос"
+
+    attributes:
+      answer:
+        correct: "Правильный"
+        body: "Ответ"
+      question:
+        body: "Вопрос"
+      test:
+        title: "Название"
+        level: "Уровень"
+        category_id: "Категория"

@@ -1,33 +1,40 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   'true': 'foo'
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
 en:
-  hello: "Hello world"
+  app:
+    edit: 'Edit'
+    delete: 'Delete'
+    show: 'Show'
+    sure: 'Are you sure?'
+  admin:
+    tests:
+      index:
+        tricky: "Tricky Tests:"
+        title: "Title"
+        level: "Level"
+        action: 'Actions'
+        create_new: 'Create new test'
+      show:
+        test: 'Test'
+        title: 'Title'
+        level: 'Level'
+        actions: 'Actions'
+        questions: 'Questions'
+        body: 'Body'
+        new_question: 'Create new question'
+      edit:
+        edit_test: 'Editing test'
+      new:
+        create_new: 'Creating new test'
+    answers:
+      edit:
+        header: 'Editing answer'
+      new:
+        header: 'Creating answer'
+      show:
+        question: 'Question'
+        answer: 'Answer'
+        correct: 'Correct'
+    questions:
+      edit:
+        edit_question: "Edit %{test_title} question"
+      new:
+        new_question: "New %{test_title} question"
