@@ -1,14 +1,14 @@
 <div>
-<h1><%= @question.test.title %> <% t('question.question') %></h1>
+<h1><%= t('.test') %> <%= @question.test.title %></h1>
 
 <p>
-  <strong><% t('question.question') %></strong>
+  <strong><%= t('.question') %></strong>
   <%= @question.body %>
 </p>
 
-<h2><% t('answer.answers') %></h2>
+<h2><%= t('.answers') %></h2>
 
-<%= link_to t('question.new_answer'), new_admin_question_answer_path(@question) %>
+<%= link_to t('.new_answer'), new_admin_question_answer_path(@question) %>
 <ol>
   <%= render @question.answers %>
 </ol>

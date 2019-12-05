@@ -1,5 +1,5 @@
-<h1>Hooray</h1>
+<h1><%= t('.hooray')%></h1>
 
 <p>
-  Congratulations! You completed the <b><%= @test.title %></b> test. Why not to finish <%= link_to 'more', tests_url %>?
+  <%= t('.congratulations')%> <b><%= @test.title %></b> <%= t('.suggestion')%> <%= link_to t('.more'), tests_url %>?
 </p>

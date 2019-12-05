@@ -1,9 +1,42 @@
 en:
+  test_mailer:
+    completed_test:
+      hooray: Hooray
+      congratulations: Congratulations! You completed the
+      suggestion: test. Why not to finish
+      more: more
+  test_passages:
+    success_color:
+      success: "Succes! You've completed the test! Percents:"
+      fail: "Defeat! You have not completed the test! Percents:"
+    result:
+      result: 'Result'
+      tests: Tests
+    show:
+      passing: 'Passing the'
+      out_of: 'out of'
+      question: 'Question'
+      next: Next
+  tests:
+    test:
+      start: 'Start'
+    index:
+      tricky: "Tricky Tests:"
+      title: "Title"
+      start: "Start"
   app:
     edit: 'Edit'
     delete: 'Delete'
     show: 'Show'
     sure: 'Are you sure?'
+    back: 'Back'
+    description: 'Learning project in Thinknetica Online School'
+    description_more: 'for creating, managing and passing tests'
+    year: 'year'
+    author: 'Author: Sofia Bitno'
+    project: 'Project'
+    login: 'Login'
+    logout: 'logout'
   admin:
     tests:
       index:
@@ -38,3 +71,8 @@ en:
         edit_question: "Edit %{test_title} question"
       new:
         new_question: "New %{test_title} question"
+      show:
+        new_answer: "Create new answer"
+        question: 'Question'
+        answers: 'Answers'
+        test: 'Test'

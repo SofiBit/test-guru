@@ -1,6 +1,6 @@
 <footer>
-  <p><a href="http://thinknetica.com/" target="_blank">Учебный проект в онлайн-школе Thinknetica</a> по созданию, управлению и прохождению тестов.</p>
-  <p><%= current_year %> год</p>
-  <p>Автор: София Битно</p>
+  <p><a href="http://thinknetica.com/" target="_blank"><%= t('app.description') %></a> <%= t('app.description_more') %>.</p>
+  <p><%= current_year %><%= t('app.year')%></p>
+  <p><%= t('app.author') %></p>
   <p><%= github_url('SofiBit', 'test-guru')%></p>
 </footer>
