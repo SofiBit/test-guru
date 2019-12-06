@@ -222,7 +222,7 @@ DEPENDENCIES
   capybara (>= 2.15)
   chromedriver-helper
   coffee-rails (~> 4.2)
-  devise
+  devise (~> 4.6.2)
   devise-i18n
   jbuilder (~> 2.5)
   letter_opener

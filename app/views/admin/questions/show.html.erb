@@ -1,23 +1,23 @@
 <div>
-<h1><%= @question.test.title %> Question</h1>
+<h1><%= t('.test') %> <%= @question.test.title %></h1>
 
 <p>
-  <strong>Body:</strong>
+  <strong><%= t('.question') %></strong>
   <%= @question.body %>
 </p>
 
-<h2>Answers:</h2>
+<h2><%= t('.answers') %></h2>
 
-<%= link_to 'New answer', new_admin_question_answer_path(@question) %>
+<%= link_to t('.new_answer'), new_admin_question_answer_path(@question) %>
 <ol>
   <%= render @question.answers %>
 </ol>
 
 
-<%= link_to 'Edit', edit_admin_question_path(@question) %> |
-<%= link_to 'Delete',
+<%= link_to t('app.edit'), edit_admin_question_path(@question) %> |
+<%= link_to t('app.delete'),
                 admin_question_path(@question),
                 method: :delete,
-                data: { confirm: 'Are you sure?' }%> |
-<%= link_to 'Back', admin_test_path(@question.test) %>
+                data: { confirm: t('app.sure') }%> |
+<%= link_to t('app.back'), admin_test_path(@question.test) %>
 </div>

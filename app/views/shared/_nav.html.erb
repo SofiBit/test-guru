@@ -1,4 +1,7 @@
 <div class="nav">
   <p><%= link_to 'Test Guru', tests_path %></p>
-  <p><%= link_to 'login', user_session_path %></p>
+  <p><%= link_to t('app.login'), user_session_path %></p>
+  <% if user_signed_in? %>
+    <p><%= link_to t('app.logout'), destroy_user_session_path, method: :delete %></p>
+  <% end %>
 <div>

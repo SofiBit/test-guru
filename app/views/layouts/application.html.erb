@@ -12,10 +12,6 @@
   <body>
     <%= render 'shared/nav' %>
 
-    <% if user_signed_in? %>
-      <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
-    <% end %>
-
     <%= render 'shared/flash' %>
 
     <div class = "content">
