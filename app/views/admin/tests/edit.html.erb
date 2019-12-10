@@ -1,4 +1,12 @@
-<h1> <%= t('.edit_test') %> '<%= @test.title %>' </h1>
+<div class="row justify-content-center mt-3">
+  <div class="col col-md-4">
+    <h1><%= t('.edit_test') %>'<%= @test.title %>'</h1>
 
-<%= render 'form' %>
-<p><%= link_to t('app.back'), admin_tests_path %></p>
+    <div class="card border-primary">
+      <div class="card-body">
+        <%= render 'form' %>
+      </div>
+    </div>
+    <p><%= link_to t('app.back'), admin_tests_path %></p>
+  </div>
+</div>

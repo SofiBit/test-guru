@@ -1,23 +1,24 @@
-<div>
-<h1><%= t('.test') %> <%= @question.test.title %></h1>
+<div class="row justify-content-center mt-3">
+  <div class="col col-md-4">
+    <h1><%= t('.test') %> <%= @question.test.title %></h1>
 
-<p>
-  <strong><%= t('.question') %></strong>
-  <%= @question.body %>
-</p>
+    <p class="mt-4 mb-4">
+      <strong><%= t('.question') %>:</strong>
+      <%= @question.body %><br>
+      <%= link_to t('app.edit'), edit_admin_question_path(@question) %> |
+      <%= link_to t('app.delete'),
+                      admin_question_path(@question),
+                      method: :delete,
+                      data: { confirm: t('app.sure') }%>
+    </p>
 
-<h2><%= t('.answers') %></h2>
+    <h2><%= t('.answers') %></h2>
 
-<%= link_to t('.new_answer'), new_admin_question_answer_path(@question) %>
-<ol>
-  <%= render @question.answers %>
-</ol>
+    <%= link_to t('.new_answer'), new_admin_question_answer_path(@question) %>
+    <ol class="list-group">
+      <%= render @question.answers %>
+    </ol>
 
-
-<%= link_to t('app.edit'), edit_admin_question_path(@question) %> |
-<%= link_to t('app.delete'),
-                admin_question_path(@question),
-                method: :delete,
-                data: { confirm: t('app.sure') }%> |
-<%= link_to t('app.back'), admin_test_path(@question.test) %>
+    <%= link_to t('app.back'), admin_test_path(@question.test) %>
+  </div>
 </div>

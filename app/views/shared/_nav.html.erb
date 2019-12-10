@@ -3,6 +3,7 @@
 
   <span class="navbar-text">
     <% if user_signed_in? %>
+      <%= admin_panel(current_user) %>
       <%= link_to t('app.logout'), destroy_user_session_path, method: :delete %>
     <% else %>
       <%= link_to t('app.login'), user_session_path %>

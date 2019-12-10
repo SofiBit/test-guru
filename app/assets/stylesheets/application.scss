@@ -1,8 +1,11 @@
 @import  "bootstrap";
+@import "footer";
+@import "test_passages";
 
-
+html {
+  position: relative;
+  min-height: 100%;
+}
 body {
-  margin: 0;
-  padding: 0;
-  height: 100%;
+  margin-bottom: 60px;
 }
