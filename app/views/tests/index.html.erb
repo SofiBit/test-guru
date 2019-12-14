@@ -1,11 +1,13 @@
 <h1><%= t('.tricky') %></h1>
 
-<table>
-  <tr>
-    <th><%= t('.title') %></th>
-    <th><%= t('.level') %></th>
-    <th><%= t('.start') %></th>
-  </tr>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col"><%= t('.title') %></th>
+      <th scope="col"><%= t('.level') %></th>
+      <th scope="col"><%= t('.start') %></th>
+    </tr>
+  </thead>
 
   <%= render @tests %>
 </table>

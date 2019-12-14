@@ -5,4 +5,10 @@ module TestsHelper
   def test_level(test)
     TEST_LEVELS[test.level] || :hero
   end
+
+  def admin_panel(current_user)
+    return unless current_user.is_a?(Admin)
+
+    link_to 'Admin panel', admin_tests_path
+  end
 end

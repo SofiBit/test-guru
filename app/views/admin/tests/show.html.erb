@@ -1,28 +1,34 @@
-<h1><%= t('.test') %></h1>
+<div class="row justify-content-center mt-3">
+  <div class="col col-md-4">
+    <h1><%= t('.test') %></h1>
 
-<p>
-  <strong><%= t('.title') %>:</strong>
-  <%= @test.title %>
-</p>
-<p>
-  <strong>><%= t('.level') %>:</strong>
-  <%= @test.level %>
-</p>
+    <div class="mb-4">
+      <strong><%= t('.title') %>:</strong><br>
+      <%= @test.title %>
 
-<%= link_to t('app.edit'), edit_admin_test_path(@test) %> |
-<%= link_to t('app.back'), admin_tests_path %>
+      <strong><%= t('.level') %>:</strong>
+      <%= @test.level %><br>
 
-<div>
-  <h2><%= t('.questions')%>:</h2>
 
-    <table>
-      <tr>
-        <th><%= t('.body') %>:</th>
-        <th><%= t('.actions') %>:</th>
-      </tr>
+      <%= link_to t('app.edit'), edit_admin_test_path(@test) %> |
+      <%= link_to t('app.back'), admin_tests_path %>
+    </div>
 
-      <%= render @test.questions %>
-    </table>
 
-  <p><%= link_to t('.new_question'), new_admin_test_question_path(@test)%></p>
+    <div>
+      <h2><%= t('.questions')%>:</h2>
+
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col"><%= t('.body') %>:</th>
+            <th scope="col"><%= t('.actions') %>:</th>
+          </tr>
+
+          <%= render @test.questions %>
+        </thead>
+      </table>
+      <p class="mt-4"><%= link_to t('.new_question'), new_admin_test_question_path(@test)%></p>
+    </div>
+  <div>
 </div>

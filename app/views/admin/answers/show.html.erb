@@ -1,15 +1,17 @@
-<h1><%= t('.question') %></h1>
+<div class="row justify-content-center mt-3">
+  <div class="col col-md-4">
+    <h1><%= t('.question') %></h1>
 
-<p><%= @answer.question.body %></p>
+    <p><%= @answer.question.body %></p>
 
-<p>
-  <b><%= t('.answer') %>:</b>
-  <%= @answer.body %>
-</p>
+    <b><%= t('.answer') %>:</b>
+    <%= @answer.body %>
 
-<p>
-  <b><%= t('.correct') %>:</b>
-  <%= @answer.correct %>
-</p>
+    <p>
+      <b><%= t('.correct') %>:</b>
+      <%= @answer.correct %>
+    </p>
 
-<%= link_to t('app.back'), admin_question_path(@answer.question)%>
+    <%= link_to t('app.back'), admin_question_path(@answer.question)%>
+  </div>
+</div>
