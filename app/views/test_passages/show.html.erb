@@ -14,5 +14,7 @@
 
       <p><%= form.submit t('.next'), class: 'btn btn-primary' %></p>
     <% end %>
+    
+    <%= button_to 'Create the gist', gists_path, params: {question: @test_passage.current_question} %>
   </div>
 </div>

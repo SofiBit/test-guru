@@ -14,12 +14,15 @@ Rails.application.routes.draw do
     post :start, on: :member
   end
 
+  resources :gists, only: %i[create]
+
   #GET /test_passages/:id/result
   resources :test_passages, only: %i[show update] do
     get :result, on: :member
   end
 
   namespace :admin do
+    resources :gists, only: %i[index]
     resources :tests do
 
       resources :questions, shallow: true, except: :index do

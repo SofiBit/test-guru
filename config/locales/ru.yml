@@ -1,4 +1,7 @@
 ru:
+  services: 
+    gists:
+      description: "Вопрос %{test} от Test Guru"
   test_mailer:
     completed_test:
       hooray: Ура
@@ -39,6 +42,11 @@ ru:
     login: 'Войти'
     logout: 'Выйти'
   admin:
+    gists:
+      index:
+        question: 'Вопрос'
+        gist_url: 'Ссылка на Gist'
+        user: 'Пользователь'
     tests:
       index:
         tricky: "Хитрые тесты:"
