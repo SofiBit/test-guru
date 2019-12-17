@@ -1,6 +1,6 @@
 class TestPassagesController < ApplicationController
   before_action :authenticate_user!
-  before_action :find_test_passage, only: %i[show result update]
+  before_action :find_test_passage, only: %i[show result update gist]
 
   def show
   end
@@ -19,7 +19,28 @@ class TestPassagesController < ApplicationController
     end
   end
 
+  def gist
+    question = @test_passage.current_question
+    gist = GistQuestionService.new(question).run
+    flash_options = if ResultGist.new(gist).success?
+      current_user.gists.create(question: question, url: gist.html_url)
+      { notice: flash_success(gist.html_url) }
+    else
+      { alert: flash_failure }
+    end
+    redirect_to @test_passage, flash_options
+  end
+
   private
+
+  def flash_success(gist_url)
+    link = "#{view_context.link_to gist_url, gist_url, target: '_blank'}"
+    "You have created the new gist #{link}"
+  end
+
+  def flash_failure
+    "An error occurred while creating the gist"
+  end
 
   def find_test_passage
     @test_passage = TestPassage.find(params[:id])

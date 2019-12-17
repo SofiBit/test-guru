@@ -9,15 +9,7 @@ module QuestionsHelper
   end
 
   def link_question(question)
-    body = question.body.split('').reject.each_with_index do |symbol, index|
-      index > MAX_SYMBOLS - 1
-    end.join
-    link_to "#{result_body(body, question)}", admin_question_path(question)
-  end
-
-  def result_body(body, question)
-    return "#{body}.." if body.length < question.body.length
-
-    body
+    body = question.body.truncate(MAX_SYMBOLS)
+    link_to body, admin_question_path(question)
   end
 end

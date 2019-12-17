@@ -17,7 +17,7 @@ class GistQuestionService
   def gist_params
     {
       description: I18n.t('services.gists.description', test: test),
-      files: { "test-guru-questiontxt" => { content: gist_content } },
+      files: { "test-guru-question.txt" => { content: gist_content } },
       public: true
     }
   end
@@ -28,5 +28,19 @@ class GistQuestionService
 
   def setup_octokit_client
     Octokit::Client.new(access_token: ENV['ACCESS_TOKEN'])
+  end
+end
+
+class ResultGist
+  delegate :html_url, to: :@gist
+
+  def initialize(gist)
+    @gist = gist
+  end
+
+  def success?
+    return false unless @gist.present?
+
+    html_url.present?
   end
 end
