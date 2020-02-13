@@ -1,5 +1,5 @@
 <tr>
   <td><%= link_question(gist.question) %></td>
-  <td><%= link_to gist.url.gsub!('https://gist.github.com/', ''), gist.url, target: "_blank" %></td>
+  <td><%= link_to gist_hash('https://gist.github.com/'), gist.url, target: "_blank" %></td>
   <td><%= gist.user.email %></td>
 </tr>

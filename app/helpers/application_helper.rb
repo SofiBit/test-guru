@@ -19,4 +19,8 @@ module ApplicationHelper
       alert: 'alert-warning',
       notice: 'alert-info' }[name.to_sym] || name
   end
+
+  def gist_hash(url)
+    url.split('/').last
+  end
 end
