@@ -1,4 +1,7 @@
 en:
+  services:
+    gists:
+      description: "A question about %{test} from Test Guru"
   test_mailer:
     completed_test:
       hooray: Hooray
@@ -38,6 +41,11 @@ en:
     login: 'Login'
     logout: 'logout'
   admin:
+    gists:
+      index:
+        question: 'Question'
+        gist_url: 'Gist url'
+        user: 'User'
     tests:
       index:
         tricky: "Tricky Tests:"
