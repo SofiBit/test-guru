@@ -8,7 +8,7 @@ gem 'figaro'
 gem 'faraday'
 # UI
 gem 'jquery-rails'
-gem 'bootstrap', '~> 4.0.0'
+gem 'bootstrap', '~> 4.3.1'
 # AUTH
 gem 'devise', '~> 4.6.2'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
